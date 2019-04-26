@@ -48,7 +48,7 @@ class App extends React.Component{
       showingInfoWindow: true
     });
 
-    onClose = props => {    // onClose closes the infoWindow once a user clicks on the close button 
+    onClose = () => {    // onClose closes the infoWindow once a user clicks on the close button 
       if (this.state.showingInfoWindow) {
         this.setState({
           showingInfoWindow: false,
