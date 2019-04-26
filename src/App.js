@@ -27,7 +27,17 @@ class App extends React.Component{
         "name": "The Phillips Collection",
         "lat": "38.9118",
         "long": "-77.0469"
-      }
+      },
+      {
+        "name": "Georgetown University",
+        "lat": "38.9076",
+        "long": "-77.0723"
+      },
+      {
+        "name": "Chaia Tacos",
+        "lat": "38.9041",
+        "long": "-77.0632"
+      },
     ]
   }
 
@@ -48,17 +58,10 @@ class App extends React.Component{
   };
 
   render() {
-    // let name, lat, lng
-    // const places = this.state.places.map((place, i) => {
-    //     name = place.name;
-    //     lat = parseInt(place.lat);
-    //     lng = parseInt(place.long);   
-    // })
-    
     return (
       <Map
         google={this.props.google}
-        zoom={14}
+        zoom={13}
         style={this.style}
         initialCenter={{ lat: 38.89511, lng: -77.03637 }}
         >
@@ -71,14 +74,6 @@ class App extends React.Component{
              />
           )
         })}
-        {/* <Marker 
-          onClick={this.onMarkerClick}
-          name={'The Phillips Collection'}
-          position={{ lat: 38.9118, lng: -77.0469 }} />
-        <Marker 
-          onClick={this.onMarkerClick}
-          name={'Botanical Gardens'}
-          position={{ lat: 38.8881, lng: -77.0469 }} /> */}
         <InfoWindow 
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
