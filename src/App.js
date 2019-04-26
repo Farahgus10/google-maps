@@ -41,7 +41,7 @@ class App extends React.Component{
     ]
   }
 
-  onMarkerClick = (props, marker, e) =>  // onMarkerClick shows the infoWindow, which is a component in the google-maps-library that shows a window w/ more details of the place
+  onMarkerClick = (props, marker) =>  // onMarkerClick shows the infoWindow, which is a component in the google-maps-library that shows a window w/ more details of the place
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -61,9 +61,9 @@ class App extends React.Component{
     return (
       <Map
         google={this.props.google}
-        zoom={13}
+        zoom={14}
         style={this.style}
-        initialCenter={{ lat: 38.89511, lng: -77.03637 }}
+        initialCenter={{ lat: 38.9072, lng: -77.0369 }}
         >
         {this.state.places.map(place => {
           return (
@@ -83,6 +83,7 @@ class App extends React.Component{
             <h4>{this.state.selectedPlace.name}</h4>
           </div>
           </InfoWindow>
+          
       </Map>      
   )}
 }
